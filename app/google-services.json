@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "749246649554",
+    "project_id": "unibooking-a5b77",
+    "storage_bucket": "unibooking-a5b77.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:749246649554:android:91d27a1350e185825c090b",
+        "android_client_info": {
+          "package_name": "com.enfotrix.unibooking"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2cjJGusPXqTsgRGPI7-WbW7l_1th5Y9Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

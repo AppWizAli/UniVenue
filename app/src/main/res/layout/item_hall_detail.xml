@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.gridlayout.widget.GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:columnCount="3"
+        app:rowCount="1">
+
+        <TextView
+            android:id="@+id/hallname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_column="0"
+            app:layout_row="0"
+            android:text="FF1"
+            app:layout_columnWeight="1" />
+
+        <TextView
+            android:id="@+id/capacity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_column="1"
+            app:layout_row="0"
+            android:text="60"
+            app:layout_columnWeight="1" />
+
+        <Button
+            android:id="@+id/btnbook"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            app:layout_column="2"
+            app:layout_row="0"
+            android:text="Book"
+            android:background="@drawable/btn_bg"
+            app:layout_columnWeight="1" />
+    </androidx.gridlayout.widget.GridLayout>
+</LinearLayout>
+
+
+
+
+
+<!--
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.gridlayout.widget.GridLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:columnCount="3"
+    app:rowCount="1">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_column="0"
+        app:layout_row="0"
+        android:text="FF1"
+        android:id="@+id/hallname"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_column="1"
+        app:layout_row="0"
+        android:text="60"
+        android:id="@+id/capacity"/>
+
+  <Button
+      android:layout_width="wrap_content"
+      android:layout_height="40dp"
+      app:layout_column="2"
+      app:layout_row="0"
+      android:text="Book"
+      android:background="@drawable/btn_bg"
+      android:id="@+id/btnbook"/>
+</androidx.gridlayout.widget.GridLayout>
+
+</LinearLayout>-->
