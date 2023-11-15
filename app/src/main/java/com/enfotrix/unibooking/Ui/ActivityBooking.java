@@ -4,29 +4,37 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.enfotrix.unibooking.R;
+import com.enfotrix.unibooking.databinding.ActivityBookingBinding;
 
 import java.text.DateFormat;
 import java.util.Calendar;
 
 public class ActivityBooking extends AppCompatActivity {
 
-    private Button dateButton, timeButton;
+    private Button dateButton, timeButton, bookingButton;
+    private ActivityBookingBinding binding;
+    SharedPrefManager sharedPrefManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_booking);
-
+        binding = ActivityBookingBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         dateButton = findViewById(R.id.date);
         timeButton = findViewById(R.id.time);
+        bookingButton = findViewById(R.id.booking);
+        sharedPrefManager = new SharedPrefManager(this);
+
+        // Initially, disable the "Next" button
+        bookingButton.setEnabled(false);
 
         dateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +47,15 @@ public class ActivityBooking extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 showTimePicker();
+            }
+        });
+
+        bookingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityBooking.this, ActivityHalls.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
@@ -66,6 +83,10 @@ public class ActivityBooking extends AppCompatActivity {
         String dateFormat = "dd MMMM yyyy";
         DateFormat df = DateFormat.getDateInstance(DateFormat.DEFAULT);
         dateButton.setText(df.format(calendar.getTime()));
+        sharedPrefManager.putDate(df.format(calendar.getTime()));
+
+        // Enable or disable the "Next" button based on date and time selection
+        updateNextButtonState();
     }
 
     private void showTimePicker() {
@@ -89,5 +110,14 @@ public class ActivityBooking extends AppCompatActivity {
         String timeFormat = "hh:mm a";
         DateFormat tf = DateFormat.getTimeInstance(DateFormat.DEFAULT);
         timeButton.setText(tf.format(calendar.getTime()));
+        sharedPrefManager.putTime(tf.format(calendar.getTime()));
+
+        // Enable or disable the "Next" button based on date and time selection
+        updateNextButtonState();
+    }
+
+    private void updateNextButtonState() {
+        // Enable the "Next" button only if both date and time are selected
+        bookingButton.setEnabled(sharedPrefManager.getDate() != null && sharedPrefManager.getTime() != null);
     }
 }

@@ -25,6 +25,7 @@ public class ActivityLoginAuth extends AppCompatActivity {
     EditText emailEditText, passwordEditText;
     Button loginButton;
     TextView backButton;
+    SharedPrefManager sharedPrefManager;
     FirebaseFirestore db;
 
     @Override
@@ -33,6 +34,7 @@ public class ActivityLoginAuth extends AppCompatActivity {
         setContentView(R.layout.activity_login_auth);
 
         db = FirebaseFirestore.getInstance();
+        sharedPrefManager = new SharedPrefManager(this);
 
         emailEditText = findViewById(R.id.email);
         passwordEditText = findViewById(R.id.passowrd);
@@ -77,15 +79,23 @@ public class ActivityLoginAuth extends AppCompatActivity {
                         // User with entered email exists
                         String storedPassword = Objects.requireNonNull(task.getResult().getDocuments().get(0).getString("password"));
 
+                        // Inside the validateCredentials() method after successful login
                         if (userPassword.equals(storedPassword)) {
-                            // Password matches, login successful
+                            // Get user model from Firebase
+                            ModelUser userModel = task.getResult().getDocuments().get(0).toObject(ModelUser.class);
+
+                            sharedPrefManager.saveUser(userModel);
+
                             Intent intent = new Intent(ActivityLoginAuth.this, MainActivity.class);
                             startActivity(intent);
-                            finish(); // Close the current activity
+
+                            // Finish the current activity
+                            finish();
                         } else {
                             // Password does not match
                             Toast.makeText(ActivityLoginAuth.this, "Invalid password", Toast.LENGTH_SHORT).show();
                         }
+
                     }
                 } else {
                     // Error fetching documents

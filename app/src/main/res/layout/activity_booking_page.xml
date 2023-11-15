@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Ui.ActivityBookingDetail">
+    tools:context=".Ui.ActivityBookingPage">
 
 
     <LinearLayout
@@ -54,7 +54,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/date"
+                android:id="@+id/datetv"
                 android:paddingStart="50dp"
                 android:textStyle="bold"
                 android:text="25/10/2023"/>
@@ -84,12 +84,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Reason"/>
+                android:text="Reason-"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:id="@+id/capacity"
                 android:layout_marginStart="50dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="6dp"
                 android:background="@drawable/et_bg"
                 android:paddingStart="10dp"
@@ -104,12 +105,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="# Participant -"/>
-            <TextView
+            <EditText
+                android:id="@+id/participant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/participant"
-                android:paddingStart="50dp"
-                android:textStyle="bold"
+                android:paddingStart="30dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginLeft="13dp"
+                android:background="@drawable/et_bg"
+                android:textSize="18dp"
+                android:paddingRight="10dp"
                 android:text="100"/>
         </LinearLayout>
 
@@ -132,7 +137,7 @@
             android:src="@drawable/icon"/>
 
         <Button
-            android:id="@+id/booking"
+            android:id="@+id/bookingbtn"
             android:layout_width="150dp"
             android:layout_height="40dp"
             android:layout_marginTop="40dp"
@@ -141,16 +146,14 @@
             android:text="Booking" />
     </RelativeLayout>
 
-
-
-
     <TextView
+        android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Back"
         android:layout_marginStart="50dp"
-        android:id="@+id/back"
-        android:textSize="20sp"/>
+        android:layout_marginTop="-80dp"
+        android:textSize="25sp"/>
 
 </LinearLayout>
 
