@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".Ui.ActivityAddHalls">
+
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="90dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/univene"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/icon"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="90dp"/>
+
+            <EditText
+                android:id="@+id/etHallName"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/et_bg"
+                android:hint="Hall Name"
+                android:drawablePadding="5dp"
+                android:textSize="13dp"
+                android:layout_marginVertical="10dp"
+                android:layout_gravity="center"
+                android:paddingStart="10dp"
+                />
+
+            <EditText
+                android:id="@+id/etHallCapcity"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/et_bg"
+                android:hint="Hall capacity"
+                android:drawablePadding="5dp"
+                android:textSize="13dp"
+                android:inputType="number"
+                android:layout_marginVertical="10dp"
+                android:layout_gravity="center"
+                android:paddingStart="10dp"
+                />
+
+            <EditText
+                android:id="@+id/etHallVenue"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/et_bg"
+                android:drawablePadding="5dp"
+                android:textSize="13dp"
+                android:hint="Hall Venue"
+                android:layout_marginVertical="10dp"
+                android:paddingStart="10dp"
+                />
+
+            <EditText
+                android:id="@+id/etHallType"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/et_bg"
+                android:drawablePadding="5dp"
+                android:textSize="13dp"
+                android:hint="AC/NON"
+                android:layout_marginVertical="10dp"
+                android:paddingStart="10dp"
+                />
+
+            <Button
+                android:id="@+id/btnAddhalls"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="20dp"
+                android:text="Add Hall"
+                android:background="@drawable/btn_bg"
+                android:layout_marginVertical="30dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back"
+                android:id="@+id/back"
+                android:textSize="20sp"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

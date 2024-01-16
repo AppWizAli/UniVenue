@@ -42,6 +42,13 @@ public class ActivityBooking extends AppCompatActivity {
                 showDatePicker();
             }
         });
+        binding.back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle back
+                finish();
+            }
+        });
 
         timeButton.setOnClickListener(new View.OnClickListener() {
             @Override

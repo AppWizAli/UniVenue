@@ -45,7 +45,7 @@ public class ActivityBookingPage extends AppCompatActivity {
 
         // Check if hallModel is not null before accessing its methods
         if (hallModel != null) {
-            Toast.makeText(this, "" + hallModel.getHallCapacity(), Toast.LENGTH_SHORT).show();
+
             binding.datetv.setText(sharedPrefManager.getDate());
             binding.time.setText(sharedPrefManager.getTime());
 
@@ -64,7 +64,7 @@ public class ActivityBookingPage extends AppCompatActivity {
                     // Check if both reason and participant are not empty
                     if (!reason.isEmpty() && !participant.isEmpty()) {
                         // Display a Toast with the values
-                        Toast.makeText(ActivityBookingPage.this, "Reason: " + reason + ", Participant: " + participant, Toast.LENGTH_SHORT).show();
+
 
                         // Create a BookingModel object with the required data
                         BookingModel bookingModel = new BookingModel();

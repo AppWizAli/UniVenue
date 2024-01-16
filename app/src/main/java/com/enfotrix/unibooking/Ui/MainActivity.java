@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
        TextView name=findViewById(R.id.userName);
 
        String names=name.getText().toString();
-       name.setText(sharedPrefManager.getUser().getEmail());
+       name.setText(sharedPrefManager.getUser().getName());
 
 
         historyButton.setOnClickListener(new View.OnClickListener() {

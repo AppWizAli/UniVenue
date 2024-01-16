@@ -13,6 +13,28 @@
         android:theme="@style/Theme.UniBooking"
         tools:targetApi="31">
         <activity
+            android:name=".Ui.ActivityAddHalls"
+            android:exported="false" />
+        <activity
+            android:name=".Ui.ActivityNewRequests"
+            android:exported="false" />
+        <activity
+            android:name=".Ui.ActivityAdminLoginAuth"
+            android:exported="false" />
+        <activity
+            android:name=".Ui.ActivityAdminLogin"
+            android:exported="false" />
+        <activity
+            android:name=".Ui.ActivityAdminOrUserSelect"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name=".Ui.ActivitySignup"
             android:exported="false" />
         <activity
@@ -35,16 +57,12 @@
             android:exported="false" />
         <activity
             android:name=".Ui.ActivityLogin"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="true">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Ui.MainActivity"
-            android:exported="false"/>
+            android:exported="false" />
     </application>
 
 </manifest>
